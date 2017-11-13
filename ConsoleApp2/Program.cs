@@ -11,7 +11,7 @@ namespace ConsoleApp2
     {
         static async Task Main(string[] args)
         {
-            var client = new INFeDistribuicaoDFeClient();
+            var client = new NFeDistribuicaoDFeClient();
             Console.WriteLine("Insira o caminho do certificado:");
             var pathCertificado = Console.ReadLine();
             Console.WriteLine("Insira a senha do certificado:");
