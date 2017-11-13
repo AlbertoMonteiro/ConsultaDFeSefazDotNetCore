@@ -11,13 +11,13 @@ namespace ConsoleApp2
     {
         static async Task Main(string[] args)
         {
-            var client = new NFeDistribuicaoDFeClient();
-            Console.WriteLine("Insira o caminho do certificado:");
+            Console.WriteLine("Insira o caminho do certificado[sem aspas]:");
             var pathCertificado = Console.ReadLine();
             Console.WriteLine("Insira a senha do certificado:");
             var senha = Console.ReadLine();
             var certificate = new X509Certificate2(pathCertificado, senha);
-            client.ClientCredentials.ClientCertificate.Certificate = certificate;
+
+            INFeDistribuicaoDFe client = HttpsSoapClientFactory.NFeDistribuicaoDFe(certificate);
 
             var dfe = new distDFeInt
             {
